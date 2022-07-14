@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import classStyle from "./Posts.module.css";
+import Loader from "../loader/Loader";
+import PostItem from "./postItem/PostItem";
 
 const Posts = () => {
 
@@ -22,15 +23,11 @@ const Posts = () => {
     }, []);
     return (
         <div className="container my-4">
-            {loading && <div className={classStyle.wrapper + "wrapper"}>
-                <div className="spinner-border" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </div>
-            </div>}
+            {loading && <Loader />}
             {posts.map(post => {
-                return <h1 key={post.id}>{post.id}</h1>
+                return <PostItem key={post.id} post={post} />
             })}
-        </div>
+        </div >
     )
 }
 

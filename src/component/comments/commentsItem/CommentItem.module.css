@@ -1,0 +1,17 @@
+.wrapper {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+    display: flex;
+    padding: 20px;
+}
+
+.name {
+    font-size: 16px;
+}
+
+.img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+}
